@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 export default function Myforom() {
-  // eslint-disable-next-line no-unused-vars
   const [username, changeUserName] = useState("");
   return (
     <div className="forom">
