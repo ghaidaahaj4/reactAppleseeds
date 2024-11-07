@@ -4,16 +4,23 @@ import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
 export default function Card({ title, color, func }) {
   const [res, change] = useState(" ");
+  const [imgUrl, changeImg] = useState("");
 
   async function handleRes() {
     const r = await func();
-    console.log(r);
-    change(r);
+    if (r.startsWith("https:")) {
+      changeImg(r);
+      change("see the img");
+    } else {
+      change(r);
+    }
   }
 
-  console.log(res);
   return (
-    <div className={`card ${color}`}>
+    <div
+      className={`card ${color} `}
+      style={{ backgroundImage: `url(${imgUrl})` }}
+    >
       <h1>{title}</h1>
       <button onClick={handleRes}>
         <FontAwesomeIcon icon={faPaperPlane} />

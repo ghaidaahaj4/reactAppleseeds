@@ -38,6 +38,27 @@ export default function AllCrds() {
     }
     return res;
   }
+  async function fetchDogs() {
+    const apiUrl = "https://dog.ceo/api/breeds/image/random";
+    let res = "";
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error("Failed to fetch joke");
+      }
+      const data = await response.json();
+      console.log(data.message);
+      res = data.message;
+    } catch (error) {
+      console.error("Error fetching cats:", error);
+    }
+    return res;
+  }
+
+  async function fetchBears() {
+    const apiUrl = "https://placebear.com/g/200/300";
+    return apiUrl;
+  }
 
   return (
     <div className="scroll-container">
@@ -46,8 +67,8 @@ export default function AllCrds() {
         card2={{ title: "Element2", color: "green", funcTorun: fetchCats }}
       />
       <Row
-        card1={{ title: "Element3", color: "purple" }}
-        card2={{ title: "Element4", color: "blue" }}
+        card1={{ title: "Element3", color: "purple", funcTorun: fetchDogs }}
+        card2={{ title: "Element4", color: "blue", funcTorun: fetchBears }}
       />
     </div>
   );
