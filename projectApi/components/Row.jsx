@@ -9,7 +9,11 @@ export default function Row({ card1, card2 }) {
         color={card1.color}
         func={card1.funcTorun}
       ></Card>
-      <Card title={card2.title} color={card2.color}></Card>
+      <Card
+        title={card2.title}
+        color={card2.color}
+        func={card2.funcTorun}
+      ></Card>
     </div>
   );
 }

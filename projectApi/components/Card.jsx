@@ -2,13 +2,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
-export default function Card(props) {
-  const { title, color, func } = props;
-
+export default function Card({ title, color, func }) {
   const [res, change] = useState(" ");
 
   async function handleRes() {
     const r = await func();
+    console.log(r);
     change(r);
   }
 
@@ -20,7 +19,7 @@ export default function Card(props) {
         <FontAwesomeIcon icon={faPaperPlane} />
         Send Request
       </button>
-      {res && <p>{res}</p>}
+      <p>{res}</p>
     </div>
   );
 }

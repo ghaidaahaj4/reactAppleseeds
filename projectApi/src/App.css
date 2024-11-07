@@ -53,12 +53,14 @@
     align-items: center;
     border-width: 0.5vh;
     border-style: solid;
-    height: 10vh; /* Adjust to fit four lines comfortably */
+    height: 5vh; /* Adjust to fit four lines comfortably */
     width: 20vw; /* Set a width that forces text to wrap */
     line-height: 1.2; /* Adjust spacing between lines */
     text-align: center;
     word-wrap: break-word; /* Wraps long words to the next line if needed */
     overflow: scroll;
+    padding-top: 4vh;
+    padding-bottom: 1vh;
   }
 }
 .pink {

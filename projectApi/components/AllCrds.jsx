@@ -23,11 +23,27 @@ export default function AllCrds() {
     return res;
   }
 
+  async function fetchCats() {
+    const apiUrl = "https://catfact.ninja/fact";
+    let res = "";
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        throw new Error("Failed to fetch joke");
+      }
+      const data = await response.json();
+      res = data.fact;
+    } catch (error) {
+      console.error("Error fetching cats:", error);
+    }
+    return res;
+  }
+
   return (
     <div className="scroll-container">
       <Row
         card1={{ title: "Element1", color: "pink", funcTorun: fetchJoke }}
-        card2={{ title: "Element2", color: "green" }}
+        card2={{ title: "Element2", color: "green", funcTorun: fetchCats }}
       />
       <Row
         card1={{ title: "Element3", color: "purple" }}
