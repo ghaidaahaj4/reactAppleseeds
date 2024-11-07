@@ -11,6 +11,7 @@ export default function Card(props) {
     const r = await func();
     change(r);
   }
+
   console.log(res);
   return (
     <div className={`card ${color}`}>

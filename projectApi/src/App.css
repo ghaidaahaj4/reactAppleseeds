@@ -50,11 +50,15 @@
   }
   p {
     display: flex;
-    justify-content: center;
     align-items: center;
     border-width: 0.5vh;
     border-style: solid;
-    height: 5vh;
+    height: 10vh; /* Adjust to fit four lines comfortably */
+    width: 20vw; /* Set a width that forces text to wrap */
+    line-height: 1.2; /* Adjust spacing between lines */
+    text-align: center;
+    word-wrap: break-word; /* Wraps long words to the next line if needed */
+    overflow: scroll;
   }
 }
 .pink {
@@ -99,8 +103,24 @@
     width: 200%;
   }
   .card {
-    button {
-      width: 50vw;
-    }
+    height: 33vh;
+  }
+  .card button {
+    width: 50vw;
+  }
+
+  .card p {
+    display: flex;
+    border-width: 0.5vh;
+    border-style: solid;
+    height: 4vh; /* Adjust to fit four lines comfortably */
+    width: 60vw; /* Set a width that forces text to wrap */
+    line-height: 1.2; /* Adjust spacing between lines */
+    padding-top: 4vh;
+    padding-bottom: 1vh;
+    text-align: center;
+    margin-bottom: 1vh;
+    word-wrap: break-word; /* Wraps long words to the next line if needed */
+    overflow: scroll;
   }
 }
