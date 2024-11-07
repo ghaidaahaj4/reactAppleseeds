@@ -55,7 +55,7 @@ export default function AllCrds() {
     return res;
   }
 
-  async function fetchBears() {
+  function fetchBears() {
     const apiUrl = "https://placebear.com/g/200/300";
     return apiUrl;
   }
