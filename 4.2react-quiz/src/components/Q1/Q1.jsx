@@ -11,4 +11,5 @@ function Q1() {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default Q1;
