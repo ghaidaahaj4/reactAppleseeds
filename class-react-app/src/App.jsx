@@ -1,11 +1,14 @@
 import "./App.css";
-import Myforom from "./Myforom";
-function App() {
+import { useRef } from "react";
+export default function App() {
+  const inputRef = useRef(null);
+  function handleClick() {
+    inputRef.current.focus();
+  }
   return (
     <>
-      <Myforom></Myforom>
+      <input ref={inputRef} />
+      <button onClick={handleClick}>Focus the input</button>
     </>
   );
 }
-
-export default App;
