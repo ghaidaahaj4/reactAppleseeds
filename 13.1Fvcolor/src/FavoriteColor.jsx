@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 
 function FavoriteColor() {
-  // Step 1: Create a state called "favoriteColor"
   const [favoriteColor, setFavoriteColor] = useState("blue");
 
-  // Step 4: Use useEffect to set a timeout when the component mounts
   useEffect(() => {
-    // This code runs only once when the component mounts
     const timer = setTimeout(() => {
       setFavoriteColor("green"); // Change favoriteColor after 1 second
     }, 1000);
